@@ -1,0 +1,28 @@
+CREATE TABLE game_store (id integer primary key, name text, my_cost integer, quantity integer, sale_price integer);
+
+INSERT INTO game_store VALUES
+(1, 'Diplomacy', 12.99, 3, 24.99),
+(2, 'War at Sea', 14.99, 5, 24.99),
+(3, 'Bismarck', 14.99, 1, 39.99),
+(4, 'Magic Quest', 24.99, 3, 59.99),
+(5, 'Dark Tower', 22.99, 4, 40.00),
+(6, 'King of Tokyo', 12.50, 9, 25.00),
+(7, 'Victory in the Pacific', 13.99, 4, 25.99),
+(8, 'Automobiles', 39.99, 1, 79.99),
+(9, 'Via Magica',9.99, 10, 19.99),
+(10, 'Sheriff of Nottingham', 23.50, 5, 42.99),
+(11, 'Starfleet Battles', 24.99, 5, 42.00),
+(12, 'Monopoly', 9.99, 5, 20.00),
+(13, 'Clue', 6.99, 8, 19.99),
+(14, 'Dungeon', 8.00, 6, 19.99),
+(15, 'Cataan', 18.99, 9, 39.99)
+;
+
+-what are the higher priced games sold
+SELECT * FROM game_store WHERE sale_price >=22.00 ORDER BY sale_price ;
+
+- how many totoal games do we have in stock
+SELECT SUM(quantity) FROM game_store ORDER BY quantity desc;
+
+- how many of each game do we have in stock
+SELECT quantity, name FROM game_store ORDER BY quantity desc;
